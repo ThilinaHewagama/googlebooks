@@ -28,6 +28,15 @@ class BookFinderViewController: UIViewController {
 
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "show_info" {
+            let bookInfoViewModel = BookInfoViewModel(volumeId: sender as! String)
+            (segue.destination as! BookInfoViewController).viewModel = bookInfoViewModel
+        }
+
+    }
+
 }
 
 //MARK: UITableViewDataSource
@@ -53,7 +62,8 @@ extension BookFinderViewController: UITableViewDataSource {
 extension BookFinderViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let book = self.viewModel.books[indexPath.row]
+        self.performSegue(withIdentifier: "show_info", sender: book.id)
     }
 
 }

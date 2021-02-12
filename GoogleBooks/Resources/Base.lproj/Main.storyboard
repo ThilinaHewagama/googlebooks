@@ -97,7 +97,7 @@
                     <navigationItem key="navigationItem" title="Book Finder" id="Rrj-xX-Mq7"/>
                     <connections>
                         <outlet property="tblBooks" destination="Y3I-gG-9IN" id="xDO-HT-SBB"/>
-                        <segue destination="V3y-4M-CTG" kind="show" id="mPc-K5-K13"/>
+                        <segue destination="V3y-4M-CTG" kind="show" identifier="show_info" id="mPc-K5-K13"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

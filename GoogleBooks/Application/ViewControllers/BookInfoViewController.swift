@@ -9,21 +9,32 @@ import UIKit
 
 class BookInfoViewController: UIViewController {
 
+    var viewModel: BookInfoViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.viewModel.loadBook(completion: {errorString in
+
+            DispatchQueue.main.async {
+
+                if let errorString = errorString {
+                    let alert = UIAlertController(title: "Oops", message: errorString, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: {_ in
+                        self.navigationController?.popViewController(animated: true)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    self.showBookInfo()
+                }
+            }
+
+        })
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showBookInfo() {
+        print("Show me more..")
     }
-    */
 
 }
