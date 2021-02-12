@@ -15,6 +15,9 @@
 		29EC1FF625D69ECB0085C5F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EC1FF425D69ECB0085C5F7 /* LaunchScreen.storyboard */; };
 		29EC200125D69ECB0085C5F7 /* GoogleBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC200025D69ECB0085C5F7 /* GoogleBooksTests.swift */; };
 		29EC200C25D69ECB0085C5F7 /* GoogleBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC200B25D69ECB0085C5F7 /* GoogleBooksUITests.swift */; };
+		29EC202725D6A1090085C5F7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC202625D6A1090085C5F7 /* Config.swift */; };
+		29EC203125D6A14F0085C5F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC203025D6A14F0085C5F7 /* Constants.swift */; };
+		29EC203925D6A15A0085C5F7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC203825D6A15A0085C5F7 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		29EC200725D69ECB0085C5F7 /* GoogleBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29EC200B25D69ECB0085C5F7 /* GoogleBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksUITests.swift; sourceTree = "<group>"; };
 		29EC200D25D69ECB0085C5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29EC202625D6A1090085C5F7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		29EC203025D6A14F0085C5F7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		29EC203825D6A15A0085C5F7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,10 @@
 		29EC1FE825D69EC70085C5F7 /* GoogleBooks */ = {
 			isa = PBXGroup;
 			children = (
-				29EC1FE925D69EC70085C5F7 /* AppDelegate.swift */,
-				29EC1FEB25D69EC70085C5F7 /* SceneDelegate.swift */,
-				29EC1FED25D69EC70085C5F7 /* ViewController.swift */,
-				29EC1FEF25D69EC70085C5F7 /* Main.storyboard */,
-				29EC1FF225D69ECB0085C5F7 /* Assets.xcassets */,
-				29EC1FF425D69ECB0085C5F7 /* LaunchScreen.storyboard */,
-				29EC1FF725D69ECB0085C5F7 /* Info.plist */,
+				29EC201F25D6A0880085C5F7 /* Application */,
+				29EC202025D6A0C80085C5F7 /* Common */,
+				29EC202125D6A0CF0085C5F7 /* Resources */,
+				29EC202225D6A0D60085C5F7 /* Supporting Files */,
 			);
 			path = GoogleBooks;
 			sourceTree = "<group>";
@@ -126,6 +129,124 @@
 				29EC200D25D69ECB0085C5F7 /* Info.plist */,
 			);
 			path = GoogleBooksUITests;
+			sourceTree = "<group>";
+		};
+		29EC201F25D6A0880085C5F7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				29EC1FE925D69EC70085C5F7 /* AppDelegate.swift */,
+				29EC1FEB25D69EC70085C5F7 /* SceneDelegate.swift */,
+				29EC202425D6A0E70085C5F7 /* Protocols */,
+				29EC202325D6A0DF0085C5F7 /* ViewControllers */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		29EC202025D6A0C80085C5F7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				29EC202E25D6A1340085C5F7 /* Helpers */,
+				29EC202D25D6A12E0085C5F7 /* Models */,
+				29EC202C25D6A1240085C5F7 /* Libraries */,
+				29EC202625D6A1090085C5F7 /* Config.swift */,
+				29EC202B25D6A1160085C5F7 /* Networking */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		29EC202125D6A0CF0085C5F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29EC1FEF25D69EC70085C5F7 /* Main.storyboard */,
+				29EC1FF425D69ECB0085C5F7 /* LaunchScreen.storyboard */,
+				29EC1FF225D69ECB0085C5F7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29EC202225D6A0D60085C5F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29EC1FF725D69ECB0085C5F7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29EC202325D6A0DF0085C5F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				29EC204125D6A1EA0085C5F7 /* ViewModels */,
+				29EC1FED25D69EC70085C5F7 /* ViewController.swift */,
+				29EC202525D6A0F00085C5F7 /* Cells */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		29EC202425D6A0E70085C5F7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		29EC202525D6A0F00085C5F7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		29EC202B25D6A1160085C5F7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				29EC203D25D6A1A90085C5F7 /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		29EC202C25D6A1240085C5F7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		29EC202D25D6A12E0085C5F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		29EC202E25D6A1340085C5F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29EC202F25D6A13A0085C5F7 /* Extensions */,
+				29EC203025D6A14F0085C5F7 /* Constants.swift */,
+				29EC203825D6A15A0085C5F7 /* Utils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		29EC202F25D6A13A0085C5F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		29EC203D25D6A1A90085C5F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		29EC204125D6A1EA0085C5F7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EC203125D6A14F0085C5F7 /* Constants.swift in Sources */,
 				29EC1FEE25D69EC70085C5F7 /* ViewController.swift in Sources */,
+				29EC202725D6A1090085C5F7 /* Config.swift in Sources */,
 				29EC1FEA25D69EC70085C5F7 /* AppDelegate.swift in Sources */,
 				29EC1FEC25D69EC70085C5F7 /* SceneDelegate.swift in Sources */,
+				29EC203925D6A15A0085C5F7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KQ2BLYX47H;
-				INFOPLIST_FILE = GoogleBooks/Info.plist;
+				INFOPLIST_FILE = "GoogleBooks/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +581,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KQ2BLYX47H;
-				INFOPLIST_FILE = GoogleBooks/Info.plist;
+				INFOPLIST_FILE = "GoogleBooks/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
