@@ -189,10 +189,10 @@
 		29EC202325D6A0DF0085C5F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				29EC204125D6A1EA0085C5F7 /* ViewModels */,
 				29EC204525D6A2530085C5F7 /* BookFinderViewController.swift */,
 				29EC204A25D6A2670085C5F7 /* BookInfoViewController.swift */,
 				29EC202525D6A0F00085C5F7 /* Cells */,
+				29EC204125D6A1EA0085C5F7 /* ViewModels */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

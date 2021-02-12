@@ -11,15 +11,17 @@ class BookFinderViewModel {
 
     var books = [Book]()
 
-    func loadBooks(completion:@escaping (String?) -> ()) {
+    func loadBooks(key: String?, completion:@escaping (String?) -> ()) {
 
         let urlString = Config.baseUrl + Constants.Paths.volumes
         var urlComponents = URLComponents(string: urlString)!
 
         //Get Params
-        urlComponents.queryItems = [
-            URLQueryItem(name: "q", value: "flowers")
-        ]
+        if let key = key {
+            urlComponents.queryItems = [
+                URLQueryItem(name: "q", value: key)
+            ]
+        }
 
         var urlRequest = URLRequest(url: urlComponents.url!)
         urlRequest.httpMethod = "GET"
@@ -30,10 +32,8 @@ class BookFinderViewModel {
 
                 do{
                     let results = try JSONDecoder().decode(SearchResult.self, from: data)
-                    self.books = results.items
-                    DispatchQueue.main.async {
-                        completion(nil)
-                    }
+                    self.books = results.items ?? []
+                    completion(nil)
                 }catch let DecodingError.dataCorrupted(context) {
                     print(context)
                 }catch let DecodingError.keyNotFound(key, context) {

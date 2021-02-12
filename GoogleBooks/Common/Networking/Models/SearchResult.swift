@@ -8,6 +8,6 @@
 import Foundation
 
 struct SearchResult: Decodable {
-    var totalItems: Int
-    var items:[Book]
+    var totalItems: Int?
+    var items:[Book]?
 }

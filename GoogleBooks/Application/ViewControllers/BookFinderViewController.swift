@@ -9,22 +9,13 @@ import UIKit
 
 class BookFinderViewController: UIViewController {
 
+    var debounceTimer:Timer?
     var viewModel = BookFinderViewModel()
 
     @IBOutlet weak var tblBooks:UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.viewModel.loadBooks(completion: {errorString in
-
-            if let errorString = errorString {
-                print(errorString)
-            } else {
-                self.tblBooks.reloadData()
-            }
-
-        })
 
     }
 
@@ -68,3 +59,29 @@ extension BookFinderViewController: UITableViewDelegate {
 
 }
 
+//MARK: UISearchBarDelegate
+
+extension BookFinderViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+        self.debounceTimer?.invalidate()
+        self.debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
+
+            self.viewModel.loadBooks(key: searchText, completion: {errorString in
+
+                DispatchQueue.main.async {
+                    if let errorString = errorString {
+                        print(errorString)
+                    } else {
+                        self.tblBooks.reloadData()
+                    }
+                }
+
+            })
+
+        }
+
+    }
+
+}
