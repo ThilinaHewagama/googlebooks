@@ -71,7 +71,8 @@ extension BookFinderViewController: UISearchBarDelegate {
         self.debounceTimer?.invalidate()
         self.debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
 
-            self.viewModel.loadBooks(key: searchText, completion: {errorString in
+            self.viewModel.searchText = searchText
+            self.viewModel.loadBooks(completion: {errorString in
 
                 DispatchQueue.main.async {
                     if let errorString = errorString {
@@ -84,6 +85,31 @@ extension BookFinderViewController: UISearchBarDelegate {
             })
 
         }
+
+    }
+
+}
+
+//MARK: UIScrollViewDelegate
+
+extension BookFinderViewController: UIScrollViewDelegate {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard scrollView == self.tblBooks, (scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height,
+            !viewModel.isLoadingData else { return }
+
+        self.viewModel.loadBooks(loadMore: true, completion: {errorString in
+
+            DispatchQueue.main.async {
+                if let errorString = errorString {
+                    print(errorString)
+                } else {
+                    self.tblBooks.reloadData()
+                }
+            }
+
+        })
+
 
     }
 
