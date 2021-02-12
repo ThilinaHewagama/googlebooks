@@ -18,7 +18,7 @@ class BookFinderViewModel {
 
         //Get Params
         urlComponents.queryItems = [
-            URLQueryItem(name: "q", value: "floswers")
+            URLQueryItem(name: "q", value: "flowers")
         ]
 
         var urlRequest = URLRequest(url: urlComponents.url!)
@@ -31,7 +31,21 @@ class BookFinderViewModel {
                 do{
                     let results = try JSONDecoder().decode(SearchResult.self, from: data)
                     self.books = results.items
-                }catch{
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                }catch let DecodingError.keyNotFound(key, context) {
+                    print("key: \(key) not founr in \(context.debugDescription)")
+                }
+                catch let DecodingError.valueNotFound(value, context) {
+                    print("value: \(value) not found in \(context.debugDescription)")
+                }
+                catch let DecodingError.typeMismatch(type, context){
+                    print("Type: \(type) mismatch: \(context.debugDescription)")
+                }
+                catch{
                     completion(error.localizedDescription)
                 }
 

@@ -24,6 +24,7 @@
 		29EC206025D6A5910085C5F7 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC205F25D6A5910085C5F7 /* BookCell.swift */; };
 		29EC206525D6A97F0085C5F7 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC206425D6A97F0085C5F7 /* SearchResult.swift */; };
 		29EC206A25D6A9990085C5F7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC206925D6A9990085C5F7 /* Book.swift */; };
+		29EC206F25D6B4F30085C5F7 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC206E25D6B4F30085C5F7 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		29EC205F25D6A5910085C5F7 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		29EC206425D6A97F0085C5F7 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		29EC206925D6A9990085C5F7 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		29EC206E25D6B4F30085C5F7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		29EC202F25D6A13A0085C5F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				29EC206E25D6B4F30085C5F7 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				29EC206525D6A97F0085C5F7 /* SearchResult.swift in Sources */,
 				29EC203125D6A14F0085C5F7 /* Constants.swift in Sources */,
+				29EC206F25D6B4F30085C5F7 /* UIImageView+Extension.swift in Sources */,
 				29EC202725D6A1090085C5F7 /* Config.swift in Sources */,
 				29EC1FEA25D69EC70085C5F7 /* AppDelegate.swift in Sources */,
 				29EC1FEC25D69EC70085C5F7 /* SceneDelegate.swift in Sources */,

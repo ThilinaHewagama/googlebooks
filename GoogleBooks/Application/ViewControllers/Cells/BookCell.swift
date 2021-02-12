@@ -22,11 +22,13 @@ class BookCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
-    func configure() {
-
+    func configure(book: Book) {
+        self.lblTitle.text = book.authorText
+        self.lblAuthor.text = book.authorText
+        self.lblDescription.text = book.descriptionText
+        self.ivBook.loadImageFromCache(with: book.thumbnailUrlString as NSString)
     }
 
 }

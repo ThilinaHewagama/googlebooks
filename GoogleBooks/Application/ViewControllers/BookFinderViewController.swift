@@ -16,7 +16,16 @@ class BookFinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.viewModel.loadBooks(completion: {errorString in
+
+            if let errorString = errorString {
+                print(errorString)
+            } else {
+                self.tblBooks.reloadData()
+            }
+
+        })
+
     }
 
 }
@@ -26,13 +35,13 @@ class BookFinderViewController: UIViewController {
 extension BookFinderViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.viewModel.books.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as! BookCell
-        cell.configure()
+        cell.configure(book: self.viewModel.books[indexPath.row])
         return cell
 
     }
