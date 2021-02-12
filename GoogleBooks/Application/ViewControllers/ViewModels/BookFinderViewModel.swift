@@ -34,18 +34,7 @@ class BookFinderViewModel {
                     let results = try JSONDecoder().decode(SearchResult.self, from: data)
                     self.books = results.items ?? []
                     completion(nil)
-                }catch let DecodingError.dataCorrupted(context) {
-                    print(context)
-                }catch let DecodingError.keyNotFound(key, context) {
-                    print("key: \(key) not founr in \(context.debugDescription)")
-                }
-                catch let DecodingError.valueNotFound(value, context) {
-                    print("value: \(value) not found in \(context.debugDescription)")
-                }
-                catch let DecodingError.typeMismatch(type, context){
-                    print("Type: \(type) mismatch: \(context.debugDescription)")
-                }
-                catch{
+                }catch{
                     completion(error.localizedDescription)
                 }
 

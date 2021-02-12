@@ -17,6 +17,9 @@ class BookFinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //hide empty cells
+        self.tblBooks.tableFooterView = UIView()
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

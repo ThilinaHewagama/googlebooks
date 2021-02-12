@@ -159,10 +159,10 @@
 		29EC202025D6A0C80085C5F7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				29EC202E25D6A1340085C5F7 /* Helpers */,
-				29EC202D25D6A12E0085C5F7 /* Models */,
-				29EC202C25D6A1240085C5F7 /* Libraries */,
 				29EC202625D6A1090085C5F7 /* Config.swift */,
+				29EC202E25D6A1340085C5F7 /* Helpers */,
+				29EC202C25D6A1240085C5F7 /* Libraries */,
+				29EC202D25D6A12E0085C5F7 /* Models */,
 				29EC202B25D6A1160085C5F7 /* Networking */,
 			);
 			path = Common;
