@@ -11,8 +11,15 @@ class BookInfoViewController: UIViewController {
 
     var viewModel: BookInfoViewModel!
 
+    @IBOutlet weak var lblTitle:UILabel!
+    @IBOutlet weak var lblAuthors:UILabel!
+    @IBOutlet weak var lblNoPreview:UILabel!
+    @IBOutlet weak var ivBook:UIImageView!
+    @IBOutlet weak var tvDescription: UITextView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.lblNoPreview.isHidden = true
 
         self.viewModel.loadBook(completion: {errorString in
 
@@ -34,7 +41,17 @@ class BookInfoViewController: UIViewController {
     }
     
     func showBookInfo() {
-        print("Show me more..")
+
+        if let book = self.viewModel.book {
+
+            self.lblTitle.text = book.titleText
+            self.lblAuthors.text = book.authorText
+            self.ivBook.loadImageFromCache(with: book.thumbnailUrlString as NSString)
+            self.lblNoPreview.isHidden = (book.thumbnailUrlString.count != 0)
+            self.tvDescription.text = book.descriptionText
+
+        }
+
     }
 
 }

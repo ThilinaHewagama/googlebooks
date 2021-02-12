@@ -53,7 +53,7 @@ extension Book {
 
 }
 
-struct VolumeInfo:Decodable {
+struct VolumeInfo: Decodable {
     var title: String
     var authors:[String]?
     var imageLinks: ImageLinks?
