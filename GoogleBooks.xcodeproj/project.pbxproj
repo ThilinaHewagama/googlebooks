@@ -21,6 +21,7 @@
 		29EC204B25D6A2670085C5F7 /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC204A25D6A2670085C5F7 /* BookInfoViewController.swift */; };
 		29EC205025D6A28E0085C5F7 /* BookInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC204F25D6A28E0085C5F7 /* BookInfoViewModel.swift */; };
 		29EC205825D6A2B90085C5F7 /* BookFinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC205725D6A2B90085C5F7 /* BookFinderViewModel.swift */; };
+		29EC206025D6A5910085C5F7 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC205F25D6A5910085C5F7 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		29EC204A25D6A2670085C5F7 /* BookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
 		29EC204F25D6A28E0085C5F7 /* BookInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoViewModel.swift; sourceTree = "<group>"; };
 		29EC205725D6A2B90085C5F7 /* BookFinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFinderViewModel.swift; sourceTree = "<group>"; };
+		29EC205F25D6A5910085C5F7 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		29EC202525D6A0F00085C5F7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				29EC205F25D6A5910085C5F7 /* BookCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				29EC202725D6A1090085C5F7 /* Config.swift in Sources */,
 				29EC1FEA25D69EC70085C5F7 /* AppDelegate.swift in Sources */,
 				29EC1FEC25D69EC70085C5F7 /* SceneDelegate.swift in Sources */,
+				29EC206025D6A5910085C5F7 /* BookCell.swift in Sources */,
 				29EC204B25D6A2670085C5F7 /* BookInfoViewController.swift in Sources */,
 				29EC205025D6A28E0085C5F7 /* BookInfoViewModel.swift in Sources */,
 				29EC204625D6A2530085C5F7 /* BookFinderViewController.swift in Sources */,
