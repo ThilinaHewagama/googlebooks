@@ -28,7 +28,7 @@ class BookCell: UITableViewCell {
         self.lblTitle.text = book.authorText
         self.lblAuthor.text = book.authorText
         self.lblDescription.text = book.descriptionText
-        self.ivBook.loadImageFromCache(with: book.thumbnailUrlString as NSString)
+        self.ivBook.loadImageFromCache(with: book.smallThumbnailUrlString as NSString)
     }
 
 }

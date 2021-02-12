@@ -32,11 +32,23 @@ extension Book {
     }
 
     var descriptionText:String {
-        self.searchInfo?.textSnippet ?? ""
+
+        if let description = self.volumeInfo?.description {
+            return description
+        } else if let textSnippet = self.searchInfo?.textSnippet {
+            return textSnippet
+        } else {
+            return ""
+        }
+
+    }
+
+    var smallThumbnailUrlString: String {
+        (self.volumeInfo?.imageLinks?.smallThumbnail ?? "")
     }
 
     var thumbnailUrlString: String {
-        (self.volumeInfo?.imageLinks?.smallThumbnail ?? "")
+        (self.volumeInfo?.imageLinks?.thumbnail ?? "")
     }
 
 }
@@ -45,6 +57,7 @@ struct VolumeInfo:Decodable {
     var title: String
     var authors:[String]?
     var imageLinks: ImageLinks?
+    var description: String?
 }
 
 struct SearchInfo: Decodable {
@@ -52,5 +65,6 @@ struct SearchInfo: Decodable {
 }
 
 struct ImageLinks: Decodable {
-    var smallThumbnail: String
+    var smallThumbnail: String?
+    var thumbnail: String?
 }
