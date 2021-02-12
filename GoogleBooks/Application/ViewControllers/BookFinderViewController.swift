@@ -9,6 +9,8 @@ import UIKit
 
 class BookFinderViewController: UIViewController {
 
+    var viewModel = BookFinderViewModel()
+
     @IBOutlet weak var tblBooks:UITableView!
 
     override func viewDidLoad() {

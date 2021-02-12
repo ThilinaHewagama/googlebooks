@@ -8,5 +8,9 @@
 import Foundation
 
 struct Constants{
-    
+
+    struct Paths {
+        static let volumes = "volumes"
+    }
+
 }
