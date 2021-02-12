@@ -85,6 +85,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nIG-Nb-csv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ioK-kv-qeQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,6 +96,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rrj-xX-Mq7"/>
                     <connections>
+                        <outlet property="tblBooks" destination="Y3I-gG-9IN" id="xDO-HT-SBB"/>
                         <segue destination="V3y-4M-CTG" kind="show" id="mPc-K5-K13"/>
                     </connections>
                 </viewController>
